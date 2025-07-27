@@ -1,17 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import user from './user'
+import Header from './Header'
 function App() {
-  const [counter,setCounter] = useState(0);
-return <>
-<h1>Counter Val:{counter}</h1>
-<h1>react Componenet</h1>
-<user/>
-<button onClick={()=>setCounter(counter+1)} >increase Counter Value</button>
+return(
+<>
+<Header />
+<h1>
+  My first component{sum()}
+</h1>
+<MyfIRST/>
 </>
-  
+)  
 }
 
+function MyfIRST(){
+  return(
+    <>
+    <h1>mY First</h1>
+    </>
+  )
+}
+function sum(){
+  return (2+3);
+}
 export default App
