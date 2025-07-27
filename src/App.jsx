@@ -1,6 +1,7 @@
 
 import './App.css'
 import Header from './Header'
+import { Animl,Apple } from './assets/User'
 function App() {
 return(
 <>
@@ -9,6 +10,8 @@ return(
   My first component{sum()}
 </h1>
 <MyfIRST/>
+<Animl/>
+
 </>
 )  
 }
