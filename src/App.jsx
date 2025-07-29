@@ -3,6 +3,10 @@ import './App.css'
 import Header from './Header'
 import { Animl,Apple  } from './assets/User'
 import { MyParagarph } from './Exercise'
+import { Name } from './jsx-insidehtml'
+import { forjsx } from './jsx-insidehtml'
+import { Operations } from './jsx-insidehtml'
+import { Obj} from './jsx-insidehtml'
 function App() {
 return(
 <>
@@ -13,6 +17,8 @@ return(
 <MyfIRST/>
 <Animl/>
 <MyParagarph/>
+<Myname/>
+
 </>
 )  
 }
@@ -35,5 +41,21 @@ function Sum1(){
     <h1>{Num * Num2}</h1>
     </>
   );
+}
+
+
+function Myname(){
+    const myobj =Obj();
+  return(
+<>
+<h1>{Name}</h1>
+<h1>{Name?Name:"uSERNOTFOUND"}</h1>
+<h1>{forjsx()}</h1>
+<h1>{Operations(10,20,"+")}</h1>
+<h1>{myobj.name}
+</h1>
+</>
+  )
+  
 }
 export default App
