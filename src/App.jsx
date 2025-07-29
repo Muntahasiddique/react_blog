@@ -7,18 +7,26 @@ import { Name } from './jsx-insidehtml'
 import { forjsx } from './jsx-insidehtml'
 import { Operations } from './jsx-insidehtml'
 import { Obj} from './jsx-insidehtml'
+import { Counter } from './states'
 function App() {
+   const fruit=(ammm)=>{
+alert("ammm")
+  }
 return(
 <>
+
 <Header />
 <h1>
   My first component{sum()}
+ 
 </h1>
+
 <MyfIRST/>
 <Animl/>
 <MyParagarph/>
 <Myname/>
-
+  <button onClick={()=>fruit("Ammmm")} >utton</button>
+<Counter />
 </>
 )  
 }
@@ -58,4 +66,8 @@ function Myname(){
   )
   
 }
+
+
+
+
 export default App
