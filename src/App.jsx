@@ -15,6 +15,26 @@ function App() {
 // alert("ammm")
 //   }
 //  const [display,setDisplay] = useState(1)
+
+
+
+
+// Probobj
+// const myobj = {
+//   Name : "Muntaha",
+//   class : "cs"
+// }
+
+
+
+
+// probArray
+// let PropArray = ["muntaha" , "Saliha"]
+
+
+
+// ClickEvent
+const [Namne,Updatedname] = useState("")
 return(
 <>
 {/* // <Header />
@@ -54,7 +74,19 @@ return(
 
 
 {/* Probs */}
-<Probfunction name="muntaha" />
+{/* <Probfunction name="muntaha" /> */}
+{/* <Probfunction myobj={myobj}/> */}
+{/* <Probfunction PropArray={PropArray}/> */}
+
+
+
+{/* for clickevent */}
+ {Namne  && <Probfunction Name={Namne} />}
+ 
+
+<button onClick={()=>{
+  Updatedname("Amna")
+}} >Update</button>
 
 
 
