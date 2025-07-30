@@ -13,7 +13,7 @@ function App() {
 //    const fruit=(ammm)=>{
 // alert("ammm")
 //   }
- const [display,setDisplay] = useState(true)
+ const [display,setDisplay] = useState(1)
 return(
 <>
 {/* // <Header />
@@ -28,11 +28,26 @@ return(
 // <Myname/>
 //   <button onClick={()=>fruit("Ammmm")} >utton</button>
 // <Counter /> */}
-<button onClick={()=>{
+{/* <button onClick={()=>{
   setDisplay(!display)
 }} >toggle</button>
-{display? <Toggling />:null}
+{display? <Toggling />:null} */}
 
+
+
+
+
+{/* multiple conditions */}
+<h1>{display}</h1>
+<button onClick={()=>setDisplay(display+1)} >Counter</button>
+{
+  display==1?<h1>CON1</h1>
+  :display==2?<h1> CON2 </h1>
+  :display==3?<h1> CON3 </h1>
+  :display==4?<h1> CON4 </h1>
+  :display==5?<h1> CON5 </h1>
+  :<h1>other </h1>
+}
 </>
 )  
 }
