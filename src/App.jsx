@@ -9,11 +9,12 @@ import { Operations } from './jsx-insidehtml'
 import { Obj} from './jsx-insidehtml'
 import { Counter } from './states'
 import { Toggling } from './hideandshow'
+import { Probfunction} from './probs'
 function App() {
 //    const fruit=(ammm)=>{
 // alert("ammm")
 //   }
- const [display,setDisplay] = useState(1)
+//  const [display,setDisplay] = useState(1)
 return(
 <>
 {/* // <Header />
@@ -38,7 +39,7 @@ return(
 
 
 {/* multiple conditions */}
-<h1>{display}</h1>
+{/* <h1>{display}</h1>
 <button onClick={()=>setDisplay(display+1)} >Counter</button>
 {
   display==1?<h1>CON1</h1>
@@ -47,7 +48,17 @@ return(
   :display==4?<h1> CON4 </h1>
   :display==5?<h1> CON5 </h1>
   :<h1>other </h1>
-}
+} */}
+
+
+
+
+{/* Probs */}
+<Probfunction name="muntaha" />
+
+
+
+
 </>
 )  
 }
