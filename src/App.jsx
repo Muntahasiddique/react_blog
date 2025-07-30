@@ -1,4 +1,4 @@
-
+import { useState } from 'react'
 import './App.css'
 import Header from './Header'
 import { Animl,Apple  } from './assets/User'
@@ -8,64 +8,70 @@ import { forjsx } from './jsx-insidehtml'
 import { Operations } from './jsx-insidehtml'
 import { Obj} from './jsx-insidehtml'
 import { Counter } from './states'
+import { Toggling } from './hideandshow'
 function App() {
-   const fruit=(ammm)=>{
-alert("ammm")
-  }
+//    const fruit=(ammm)=>{
+// alert("ammm")
+//   }
+ const [display,setDisplay] = useState(true)
 return(
 <>
-
-<Header />
-<h1>
-  My first component{sum()}
+{/* // <Header />
+// <h1>
+//   My first component{sum()}
  
-</h1>
+// </h1>
 
-<MyfIRST/>
-<Animl/>
-<MyParagarph/>
-<Myname/>
-  <button onClick={()=>fruit("Ammmm")} >utton</button>
-<Counter />
+// <MyfIRST/>
+// <Animl/>
+// <MyParagarph/>
+// <Myname/>
+//   <button onClick={()=>fruit("Ammmm")} >utton</button>
+// <Counter /> */}
+<button onClick={()=>{
+  setDisplay(!display)
+}} >toggle</button>
+{display? <Toggling />:null}
+
 </>
 )  
 }
 
-function MyfIRST(){
-  return(
-    <>
-    <h1>mY First</h1>
-    </>
-  )
-}
-function sum(){
-  return (2+3);
-}
-function Sum1(){
-  let Num =2;
-  let Num2 = 3;
-  return(
-  <>
-    <h1>{Num * Num2}</h1>
-    </>
-  );
-}
+// function MyfIRST(){
+//   return(
+//     <>
+//     <h1>mY First</h1>
+//     </>
+//   )
+// }
+// function sum(){
+//   return (2+3);
+// }
+// function Sum1(){
+//   let Num =2;
+//   let Num2 = 3;
+//   return(
+//   <>
+//     <h1>{Num * Num2}</h1>
+//     </>
+//   );
+// }
 
 
-function Myname(){
-    const myobj =Obj();
-  return(
-<>
-<h1>{Name}</h1>
-<h1>{Name?Name:"uSERNOTFOUND"}</h1>
-<h1>{forjsx()}</h1>
-<h1>{Operations(10,20,"+")}</h1>
-<h1>{myobj.name}
-</h1>
-</>
-  )
+// function Myname(){
+//     const myobj =Obj();
+//   return(
+// <>
+// <h1>{Name}</h1>
+// <h1>{Name?Name:"uSERNOTFOUND"}</h1>
+// <h1>{forjsx()}</h1>
+// <h1>{Operations(10,20,"+")}</h1>
+// <h1>{myobj.name}
+// </h1>
+// </>
+//   )
   
-}
+// }
 
 
 
