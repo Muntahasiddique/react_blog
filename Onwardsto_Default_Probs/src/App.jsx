@@ -2,8 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Checkboxes } from './checkboxes'
+// import { Checkboxes } from './checkboxes'
 // import { Defaultprop } from './defaultprobs'
+import { ReuseComponents } from './reusecomponents'
 function App() {
   // to get input feild
   // const [val, setval] = useState("")
@@ -33,6 +34,43 @@ function App() {
 .
 .
 */}
+// radio buttons
+// const [gender, setgender] = useState("male");
+// const [city, setcity] = useState("");
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* loops in jsx */}
+const Userdata =[
+  {
+    name: 'muntha',
+    rollno:23,
+    id:1
+  },
+    {
+    name: 'mhgf',
+    rollno:24,
+    id:2
+  },
+    {
+    name: 'muntha',
+    rollno:23,
+    id:3
+  },
+    {
+    name: 'muntha',
+    rollno:23,
+    id:4
+  }
+]
   return (
     <div>
  {/* <Defaultprop color="orange" >
@@ -116,7 +154,92 @@ function App() {
 .
 */}
 {/* handle checkbox */}
-<Checkboxes />
+{/* <Checkboxes /> */}
+  {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* radioButtons and drop down */}
+{/* <input type="radio" onChange={(event)=>{
+  setgender(event.target.value)
+}} name="gender" value={"male"} id="male" checked={gender === "male"} />
+<label htmlFor="male">Male</label>
+<br /><br />
+<input type="radio" name="gender" onChange={(event)=>{
+  setgender(event.target.value)
+}}  value={"female"} id="female" checked={gender === "female"} />
+<label htmlFor="female">feMale</label>
+<h1>{gender}</h1>
+
+<h1>select city</h1>
+<select defaultValue={"fsd"} name="city" id="city" onChange={(event)=>{
+setcity(event.target.value)
+}} >
+  <option value="lhr">Lhr</option>
+    <option value="isb">isb</option>
+      <option value="fsd">fsd</option>
+</select>
+
+<h2>selected city {city}</h2> */}
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* loops in jsx */}
+{/* <h1>Loops in jsx</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <td>name</td>
+      <td>rollno</td>
+      <td>id</td>
+    </tr>
+  </thead>
+  <tbody>
+    {Userdata.map((item)=>(
+     <tr key={item.id} >
+      <td>{item.name}</td>
+      <td>{item.rollno}</td>
+      <td>{item.id}</td>
+     </tr>
+    ))}
+  </tbody>
+</table> */}
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* Reuse Component in loop */}
+
+{
+  Userdata.map((item)=>(
+    <div key={item.id} >
+<ReuseComponents userdata={item} />
+</div>
+  ))
+
+}
     </div>
   )
 }
