@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Defaultprop } from './defaultprobs'
 function App() {
-  const [count, setCount] = useState(0)
+  const [val, setval] = useState("")
 
   return (
     <>
@@ -21,6 +21,16 @@ function App() {
      <Defaultprop   >
     <h1 style={{color:"red"}} >hi, Saliha</h1>
     </Defaultprop>
+ <h1>{val}</h1>
+
+    <input type="text" value={val} onChange={(event)=>{
+     setval(event.target.value)
+    }}  placeholder='Type something to apper' />
+
+   
+{/* To clear */}
+<button onClick={()=>setval(" ")} >Clear something</button>
+    
     </>
   )
 }
