@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 // import { Checkboxes } from './checkboxes'
 // import { Defaultprop } from './defaultprobs'
-import { ReuseComponents } from './reusecomponents'
+// import { ReuseComponents } from './reusecomponents'
+import { Clockprop } from './taskClock'
 function App() {
   // to get input feild
   // const [val, setval] = useState("")
@@ -71,6 +72,19 @@ const Userdata =[
     id:4
   }
 ]
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* making clock */}
+const [color, setcolor] = useState("red")
   return (
     <div>
  {/* <Defaultprop color="orange" >
@@ -232,14 +246,39 @@ setcity(event.target.value)
 */}
 {/* Reuse Component in loop */}
 
-{
+{/* {
   Userdata.map((item)=>(
     <div key={item.id} >
 <ReuseComponents userdata={item} />
 </div>
   ))
 
-}
+} */}
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* making clock */}
+<select name="" id="" onChange={(event)=>
+  setcolor(event.target.value)
+} >
+  <option value={"red"}>Red</option>
+  <option value={"Blue"}>Blue</option>
+  <option value={"purple"}>Purple</option>
+</select>
+<br />
+<br />
+<br />
+<br />
+<Clockprop color={color} />
+
     </div>
   )
 }
