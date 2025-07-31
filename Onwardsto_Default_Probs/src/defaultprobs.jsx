@@ -8,10 +8,10 @@
 
 
 // for passing jsx
-export function Defaultprop({children,color="purple"}){
-return(
-    <div style={{color:color}} >
-    {children}
-    </div>
-)
-}
+// export function Defaultprop({children,color="purple"}){
+// return(
+//     <div style={{color:color}} >
+//     {children}
+//     </div>
+// )
+// }
