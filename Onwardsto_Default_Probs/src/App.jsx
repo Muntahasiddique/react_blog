@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { Checkboxes } from './checkboxes'
 // import { Defaultprop } from './defaultprobs'
 function App() {
   // to get input feild
@@ -18,9 +19,20 @@ function App() {
 .
 */}
 {/* Controlled Components */}
-  const [name, updateName] = useState("");
-  const [pass, updatePass] = useState("");
-  const [email, updateEmail] = useState("");
+  // const [name, updateName] = useState("");
+  // const [pass, updatePass] = useState("");
+  // const [email, updateEmail] = useState("");
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
   return (
     <div>
  {/* <Defaultprop color="orange" >
@@ -66,7 +78,7 @@ function App() {
 .
 */}
 {/* Controlled Components */}
- <input 
+ {/* <input 
         type="text" 
         onChange={(event) => updateName(event.target.value)}
         value={name}
@@ -85,13 +97,26 @@ function App() {
         placeholder='Email' 
       />
 
-      {/* Displaying the actual values */}
+    
       <h1>Name: {name}</h1>
       <h1>Password: {pass}</h1>
       <h1>Email: {email}</h1>
 <button onClick={()=>{
   updateName("") ;updateEmail("");updatePass("")
-}}   >Clear</button>
+}}   >Clear</button> */}
+  {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* handle checkbox */}
+<Checkboxes />
     </div>
   )
 }
