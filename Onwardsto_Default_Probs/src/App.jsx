@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { NestedCollege } from './nestedCollege';
+// import { NestedCollege } from './nestedCollege';
 // import { Checkboxes } from './checkboxes'
 // import { Defaultprop } from './defaultprobs'
 // import { ReuseComponents } from './reusecomponents'
 // import { Clockprop } from './taskClock'
+import { ProbsHandlingUseeffect } from './useEffectsprobshandling'
 function App() {
   // to get input feild
   // const [val, setval] = useState("")
@@ -175,20 +176,34 @@ function App() {
 .
 */}
 {/* UseEffects in jsx */}  
+// const [counter , setcounter] = useState(0);
+// const [data , setdata] = useState(0);
+// useEffect(()=>{
+//   calldata()},[counter])
+
+// useEffect(()=>{
+//   callonece()},[])
+
+// function callonece() {
+//   console.log("call me")
+// }
+// function calldata() {
+//   console.log("call data")
+// }
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* UseEffects for probs handling  */}  
 const [counter , setcounter] = useState(0);
 const [data , setdata] = useState(0);
-useEffect(()=>{
-  calldata()},[counter])
-
-useEffect(()=>{
-  callonece()},[])
-
-function callonece() {
-  console.log("call me")
-}
-function calldata() {
-  console.log("call data")
-}
 
 
 return (
@@ -418,7 +433,7 @@ setcity(event.target.value)
 .
 */}
 {/* uSEeffects */}
-
+{/* 
 <h1>{counter}</h1>
 <h1>{data}</h1>
 <button onClick={()=>{
@@ -426,9 +441,17 @@ setcity(event.target.value)
 }} >USeeffectTest</button>
 <button onClick={()=>{
   setdata(data+1)
-}} >data</button>
+}} >data</button> */}
 
+{/* useeffects For probs */}
+<ProbsHandlingUseeffect counter={counter} data={data} />
+<button onClick={()=>{
+  setcounter(counter+1)
+}} >USeeffectTest</button>
 
+<button onClick={()=>{
+  setdata(data+1)
+}} >data</button> 
     </div>
   )
 }
