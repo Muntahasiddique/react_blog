@@ -2,10 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { NestedCollege } from './nestedCollege';
 // import { Checkboxes } from './checkboxes'
 // import { Defaultprop } from './defaultprobs'
 // import { ReuseComponents } from './reusecomponents'
-import { Clockprop } from './taskClock'
+// import { Clockprop } from './taskClock'
 function App() {
   // to get input feild
   // const [val, setval] = useState("")
@@ -50,29 +51,29 @@ function App() {
 .
 */}
 {/* loops in jsx */}
-const Userdata =[
-  {
-    name: 'muntha',
-    rollno:23,
-    id:1
-  },
-    {
-    name: 'mhgf',
-    rollno:24,
-    id:2
-  },
-    {
-    name: 'muntha',
-    rollno:23,
-    id:3
-  },
-    {
-    name: 'muntha',
-    rollno:23,
-    id:4
-  }
-]
-    {/* .
+// const Userdata =[
+//   {
+//     name: 'muntha',
+//     rollno:23,
+//     id:1
+//   },
+//     {
+//     name: 'mhgf',
+//     rollno:24,
+//     id:2
+//   },
+//     {
+//     name: 'muntha',
+//     rollno:23,
+//     id:3
+//   },
+//     {
+//     name: 'muntha',
+//     rollno:23,
+//     id:4
+//   }
+// ]
+   {/* .
 .
 .
 . 
@@ -84,7 +85,84 @@ const Userdata =[
 .
 */}
 {/* making clock */}
-const [color, setcolor] = useState("red")
+// const [color, setcolor] = useState("red")
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* Nested in jsx */}
+const CollegeData = [
+  {
+    name: "Oxford University",
+    website: "https://www.ox.ac.uk",
+    students: [
+      {
+        name: "John Doe",
+        rollno: 101,
+        id: 1
+      },
+      {
+        name: "Jane Smith",
+        rollno: 102,
+        id: 2
+      },
+      {
+        name: "Alice Johnson",
+        rollno: 103,
+        id: 3
+      }
+    ]
+  },
+  {
+    name: "Harvard University",
+    website: "https://www.harvard.edu",
+    students: [
+      {
+        name: "Robert Brown",
+        rollno: 201,
+        id: 4
+      },
+      {
+        name: "Emily Davis",
+        rollno: 202,
+        id: 5
+      },
+      {
+        name: "Michael Wilson",
+        rollno: 203,
+        id: 6
+      }
+    ]
+  },
+  {
+    name: "Stanford University",
+    website: "https://www.stanford.edu",
+    students: [
+      {
+        name: "Sarah Miller",
+        rollno: 301,
+        id: 7
+      },
+      {
+        name: "David Taylor",
+        rollno: 302,
+        id: 8
+      },
+      {
+        name: "Laura Anderson",
+        rollno: 303,
+        id: 9
+      }
+    ]
+  }
+];
   return (
     <div>
  {/* <Defaultprop color="orange" >
@@ -266,7 +344,7 @@ setcity(event.target.value)
 .
 */}
 {/* making clock */}
-<select name="" id="" onChange={(event)=>
+{/* <select name="" id="" onChange={(event)=>
   setcolor(event.target.value)
 } >
   <option value={"red"}>Red</option>
@@ -277,7 +355,30 @@ setcity(event.target.value)
 <br />
 <br />
 <br />
-<Clockprop color={color} />
+<Clockprop color={color} /> */}
+
+    {/* .
+.
+.
+. 
+.
+.
+.
+.
+.
+.
+*/}
+{/* Nested looping */}
+{
+   CollegeData.map((item,index)=>(
+   <div key={index} >
+  <NestedCollege item={item}  />
+
+</div>
+   ))
+
+}
+
 
     </div>
   )
