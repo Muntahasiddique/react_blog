@@ -204,6 +204,8 @@ function App() {
 {/* UseEffects for probs handling  */}  
 const [counter , setcounter] = useState(0);
 const [data , setdata] = useState(0);
+const [display , setdisplay] = useState(true);
+
 
 
 return (
@@ -444,7 +446,7 @@ setcity(event.target.value)
 }} >data</button> */}
 
 {/* useeffects For probs */}
-<ProbsHandlingUseeffect counter={counter} data={data} />
+
 <button onClick={()=>{
   setcounter(counter+1)
 }} >USeeffectTest</button>
@@ -452,6 +454,14 @@ setcity(event.target.value)
 <button onClick={()=>{
   setdata(data+1)
 }} >data</button> 
+
+<button onClick={()=>{
+  setdisplay(!display)
+}} >Toggle</button> 
+
+{display? <ProbsHandlingUseeffect counter={counter} data={data} /> :null  }
+
+
     </div>
   )
 }
