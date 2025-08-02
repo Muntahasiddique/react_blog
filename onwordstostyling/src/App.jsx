@@ -3,7 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import './css/styles.css'
-import { ModularStyling } from './modularstyling'
+// import { ModularStyling } from './modularstyling'
+import { StyledComponent } from './styledcomponent'
+import { Bootstrap } from './bootstrap'
 
 function App() {
 //  const originalStyle ={
@@ -91,8 +93,37 @@ function App() {
     // </div>
     
     // </div> */}
-<h1 className='profile' >Profile</h1>
-<ModularStyling />
+    {/* .
+    .
+    .
+    .
+     .
+    .
+    .
+    . */}
+    {/* modular styking */}
+{/* <h1 className='profile' >Profile</h1>
+<ModularStyling /> */}
+   {/* .
+    .
+    .
+    .
+     .
+    .
+    .
+    . */}
+    {/* styled component */}
+    <StyledComponent />
+      {/* .
+    .
+    .
+    .
+     .
+    .
+    .
+    . */}
+    {/* boottstrap */}
+    <Bootstrap />
     </>
   )
 }
