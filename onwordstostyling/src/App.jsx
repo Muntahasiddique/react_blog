@@ -25,7 +25,7 @@ setcardStyle({originalStyle})
   return (
     <div>
       <button onClick={changingcolor}  >Grey</button>
-         <button onClick={originalcolor}  >white</button>
+         <button onClick={originalcolor}  >Original</button>
           <button onClick={()=>setgridstyle(!grid)}  >Toggle</button>
 
     <h1 style={{ color: 'red' }}>Dynamic and Conditional Inline Style</h1>
