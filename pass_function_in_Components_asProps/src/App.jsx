@@ -1,10 +1,10 @@
-import { useRef } from 'react'
+import { useRef ,useTransition } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 // import { PassFunctions } from './passfunctions'
 import { Userefun } from './useRef'
-import { useFormStatus } from 'react-dom'
+import { useFormStatus  } from 'react-dom'
 function App() {
   // PassFunasprop
 //  function PassFunasprop(name){
@@ -32,22 +32,39 @@ function App() {
 // .
 // .
 // { useFormStatus 
-function FormComp (){
-     const {pending} =useFormStatus();
-  return(
-    <>
-  <input type="text " placeholder='enter' />
-  <button disabled={pending}  >{pending ?'SUBMITTING':'SUBMIT' }  </button>
+// function FormComp (){
+//      const {pending} =useFormStatus();
+//   return(
+//     <>
+//   <input type="text " placeholder='enter' />
+//   <button disabled={pending}  >{pending ?'SUBMITTING':'SUBMIT' }  </button>
  
-    </>
-  )
+//     </>
+//   )
   
-}
+// }
 
 
-async  function handlesubmit(){
-  await new Promise(res =>setTimeout(res,5000))
-}
+// async  function handlesubmit(){
+//   await new Promise(res =>setTimeout(res,5000))
+// }
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+{/* // Use Transition hook*/}
+const [pending , startTransition] = useTransition()
+function handleform(){
+  startTransition( async ()=>{
+ await new Promise(res=>setTimeout(res ,3000))
+  }  )
+ 
+ }
+
   return (
     <>
       {/* // PassFunasprop */}
@@ -73,10 +90,22 @@ async  function handlesubmit(){
 // .
 // . */}
 {/* // Use FormStatus hook*/}
-    <form action={handlesubmit}>
+    {/* <form action={handlesubmit}>
    
 <FormComp />
-</form>
+</form> */}
+{/* // .
+// .
+// .
+// .
+// .
+// .
+// .
+// . */}
+{/* // Use Transition hook*/}
+<button disabled={pending} onClick={handleform} >Submit</button>
+{pending?<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"alt="" />  :null
+}
 
     </>
   )
