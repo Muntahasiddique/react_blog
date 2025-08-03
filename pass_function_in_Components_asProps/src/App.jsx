@@ -1,4 +1,4 @@
-import { useRef ,useTransition } from 'react'
+import { useRef ,useState,useTransition } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -67,8 +67,24 @@ function App() {
 //   }  )
  
 //  }
-{/* Pure components */}
-
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+{/* Derived ststes */}
+const [users,setusers] = useState([]);
+const [user,setuser] = useState([]);
+function HnadleSubmit(){
+setusers([...users,user])
+setuser(' ')
+}
+const Total = users.length;
+const Unique = [...new Set(users)].length
+const Last = users[users.length-1]
 
 
   return (
@@ -121,15 +137,36 @@ function App() {
 // .
 // . */}
 {/* Pure components */}
-<Cup  count={3 }/>
+{/* <Cup  count={3 }/> */}
+{/* // .
+// .
+// .
+// .
+// .
+// .
+// .  */}
+{/* Derived states */}
+<h2>Total User {Total} </h2>
+<h2>unique {Unique} </h2>
+<h2>last User {Last} </h2>
+<input type="text" name="" id="" onChange={(event)=>setuser(event.target.value)}  placeholder='Enter user' />
+<button onClick={HnadleSubmit} >Add </button>
+
+{
+  users.map((item,index)=>(
+    <h4 key={index}>
+      {item}
+    </h4>
+  ))
+}
     </>
   )
 }
-function Cup(){
-   count = count + 2
-return(
+// function Cup(){
+//    count = count + 2
+// return(
  
-  <h1>guetes are {count} AND {count }</h1>
-)
-}
+//   <h1>guetes are {count} AND {count }</h1>
+// )
+// }
 export default App
