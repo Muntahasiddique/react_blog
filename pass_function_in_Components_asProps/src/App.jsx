@@ -5,6 +5,9 @@ import './App.css'
 // import { PassFunctions } from './passfunctions'
 import { Userefun } from './useRef'
 import { useFormStatus  } from 'react-dom'
+// {/* Pure components */}
+// let count=0;
+
 function App() {
   // PassFunasprop
 //  function PassFunasprop(name){
@@ -57,13 +60,16 @@ function App() {
 // .
 // .
 {/* // Use Transition hook*/}
-const [pending , startTransition] = useTransition()
-function handleform(){
-  startTransition( async ()=>{
- await new Promise(res=>setTimeout(res ,3000))
-  }  )
+// const [pending , startTransition] = useTransition()
+// function handleform(){
+//   startTransition( async ()=>{
+//  await new Promise(res=>setTimeout(res ,3000))
+//   }  )
  
- }
+//  }
+{/* Pure components */}
+
+
 
   return (
     <>
@@ -103,12 +109,27 @@ function handleform(){
 // .
 // . */}
 {/* // Use Transition hook*/}
-<button disabled={pending} onClick={handleform} >Submit</button>
+{/* <button disabled={pending} onClick={handleform} >Submit</button>
 {pending?<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"alt="" />  :null
-}
-
+} */}
+{/* // .
+// .
+// .
+// .
+// .
+// .
+// .
+// . */}
+{/* Pure components */}
+<Cup  count={3 }/>
     </>
   )
 }
-
+function Cup(){
+   count = count + 2
+return(
+ 
+  <h1>guetes are {count} AND {count }</h1>
+)
+}
 export default App
