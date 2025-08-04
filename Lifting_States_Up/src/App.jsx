@@ -1,4 +1,4 @@
-import { useState , useActionState } from 'react'
+import { useState , useActionState , useId} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -45,18 +45,26 @@ function App() {
 // .
 // .
 // using ActionStates
-async function handleSubmision (priviousdata , formData){
-let name = formData.get('name')
-await new Promise(res=>setTimeout(res,3000))
-if(name){
-  return {message :"Submitted"}
-}
-else{
-  return{error:"Failed to submit"}
-}
+// async function handleSubmision (priviousdata , formData){
+// let name = formData.get('name')
+// await new Promise(res=>setTimeout(res,3000))
+// if(name){
+//   return {message :"Submitted"}
+// }
+// else{
+//   return{error:"Failed to submit"}
+// }
 
-}
-const [data, action, pending] =  useActionState(handleSubmision , undefined)
+// }
+// const [data, action, pending] =  useActionState(handleSubmision , undefined)
+// .
+// .
+// .
+// .
+// .
+// .
+// using useId hook
+const user = useId();
   return (
     <>
     {/* <LiftingStatesDisplayUser user={user} />
@@ -93,7 +101,7 @@ const [data, action, pending] =  useActionState(handleSubmision , undefined)
 . 
 */}
 {/* use Actionstate Hook */}
-<form action={action}>
+{/* <form action={action}>
   <input type="text" name="name" id="" placeholder='eNTER YOUR Name' />
   <button disabled={pending} > submit </button>
 {
@@ -104,8 +112,21 @@ data?.error && <span>{data?.error}</span>
 data?.message && <span>{data?.message}</span>
 
 }
-</form>
+</form> */}
+  {/* 
+.
+.
+.
+.
+.
+. 
+*/}
+{/* // using useId hook */}
+<form action="">
+<label htmlFor={user}>Enter name</label>
+<input type="text" name="" id={user} />
 
+</form>
     </>
   )
 }
