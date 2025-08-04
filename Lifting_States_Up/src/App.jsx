@@ -20,6 +20,11 @@ const [data,setdata] = useState({
   city:'Fsd'
   }
 })
+// New array state
+  const [items, setItems] = useState([
+    { id: 1, name: 'Item 1'},
+    { id: 2, name: 'Item 2'}
+  ])
 function HandleName(val){
 data.name = val;
 setdata({...data})
@@ -28,6 +33,12 @@ function Handlecity(valu){
 data.Adress.city = valu;
 setdata({...data,Adress:{...data.Adress ,city: valu}})
 }
+// for Array
+function HandleArrayName(val){
+items[items.length-1].name = val;
+setItems([...items])
+}
+
   return (
     <>
     {/* <LiftingStatesDisplayUser user={user} />
@@ -45,6 +56,16 @@ setdata({...data,Adress:{...data.Adress ,city: valu}})
   <input type="text"  onChange={(event)=>Handlecity(event.target.value)}  name="" id=""  placeholder='Enter city'/>
  <h1>{data.name}</h1>
  <h1>{data.Adress.city}</h1>
+ {/* for array */}
+ <h1>Array with obj</h1>
+  <input type="text"  onChange={(event)=>HandleArrayName(event.target.value)}  name="" id=""  placeholder='Enter name'/>
+  {
+    items.map((arrayitem , index)=>(
+       <h3 key={index} >
+          {arrayitem.name}
+       </h3>
+    ))
+  }
     </>
   )
 }
