@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState , useActionState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -14,31 +14,49 @@ function App() {
 // .
 // .
 // {/* updatingobjects in states */}
-const [data,setdata] = useState({
-  name : 'Muntaha',
-  Adress :{
-  city:'Fsd'
-  }
-})
+// const [data,setdata] = useState({
+//   name : 'Muntaha',
+//   Adress :{
+//   city:'Fsd'
+//   }
+// })
 // New array state
-  const [items, setItems] = useState([
-    { id: 1, name: 'Item 1'},
-    { id: 2, name: 'Item 2'}
-  ])
-function HandleName(val){
-data.name = val;
-setdata({...data})
-}
-function Handlecity(valu){
-data.Adress.city = valu;
-setdata({...data,Adress:{...data.Adress ,city: valu}})
-}
+//   const [items, setItems] = useState([
+//     { id: 1, name: 'Item 1'},
+//     { id: 2, name: 'Item 2'}
+//   ])
+// function HandleName(val){
+// data.name = val;
+// setdata({...data})
+// }
+// function Handlecity(valu){
+// data.Adress.city = valu;
+// setdata({...data,Adress:{...data.Adress ,city: valu}})
+// }
 // for Array
-function HandleArrayName(val){
-items[items.length-1].name = val;
-setItems([...items])
+// function HandleArrayName(val){
+// items[items.length-1].name = val;
+// setItems([...items])
+// }
+// .
+// .
+// .
+// .
+// .
+// .
+// using ActionStates
+async function handleSubmision (priviousdata , formData){
+let name = formData.get('name')
+await new Promise(res=>setTimeout(res,3000))
+if(name){
+  return {message :"Submitted"}
+}
+else{
+  return{error:"Failed to submit"}
 }
 
+}
+const [data, action, pending] =  useActionState(handleSubmision , undefined)
   return (
     <>
     {/* <LiftingStatesDisplayUser user={user} />
@@ -52,12 +70,12 @@ setItems([...items])
 . 
 */}
 {/* updatingobjects in states */}
- <input type="text"  onChange={(event)=>HandleName(event.target.value)}  name="" id=""  placeholder='Enter name'/>
+ {/* <input type="text"  onChange={(event)=>HandleName(event.target.value)}  name="" id=""  placeholder='Enter name'/>
   <input type="text"  onChange={(event)=>Handlecity(event.target.value)}  name="" id=""  placeholder='Enter city'/>
  <h1>{data.name}</h1>
- <h1>{data.Adress.city}</h1>
+ <h1>{data.Adress.city}</h1> */}
  {/* for array */}
- <h1>Array with obj</h1>
+ {/* <h1>Array with obj</h1>
   <input type="text"  onChange={(event)=>HandleArrayName(event.target.value)}  name="" id=""  placeholder='Enter name'/>
   {
     items.map((arrayitem , index)=>(
@@ -65,7 +83,29 @@ setItems([...items])
           {arrayitem.name}
        </h3>
     ))
-  }
+  } */}
+  {/* 
+.
+.
+.
+.
+.
+. 
+*/}
+{/* use Actionstate Hook */}
+<form action={action}>
+  <input type="text" name="name" id="" placeholder='eNTER YOUR Name' />
+  <button disabled={pending} > submit </button>
+{
+data?.error && <span>{data?.error}</span>
+
+}
+{
+data?.message && <span>{data?.message}</span>
+
+}
+</form>
+
     </>
   )
 }
