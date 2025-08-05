@@ -2,32 +2,31 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { CollegeComponent } from './College'
+import { SubjectComponent } from './Subject'
+import { ClassComponent } from './ClassComponent'
+import { SubjectContext } from './ContextData'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [subject , setsubject] = useState('English')
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <SubjectContext.Provider value={subject} >
+      <select  value={subject} name="" id="" onChange={(event)=>setsubject(event.target.value)}> select subject
+        <option value=""> select subject</option>
+        <option value="English">English</option>
+         <option value="Science">Science</option>
+          <option value="Bio">Bio</option>
+           <option value="Math">Math</option>
+      </select>
+        <h1>Context Api</h1>
+   <CollegeComponent />
+     <ClassComponent />
+     <SubjectComponent />
+    </SubjectContext.Provider>
+   
+  <button onClick={()=>setsubject('')} >Clear</button>
     </>
   )
 }
