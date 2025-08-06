@@ -7,6 +7,8 @@ export function College() {
       <h1>College</h1>
     
      <NavLink to="student" >Student</NavLink>
+     <br />
+     <Link to="/" >Go back to homne</Link>
 <Outlet />
     </>
   );

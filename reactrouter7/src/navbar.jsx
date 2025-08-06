@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './header.css'; // Regular CSS import (not module)
 
 export function Navigationbar () {
@@ -16,7 +16,7 @@ export function Navigationbar () {
             <Link className="link" to="/">Home</Link>
           </li>
           <li>
-            <Link className="link" to="/login">Login</Link>
+            <Link className="link" to="/page">Login</Link>
           </li>
           <li>
             <Link className="link" to="/about">About</Link>
@@ -27,6 +27,7 @@ export function Navigationbar () {
         </ul>
       </nav>
     </header>
+    <Outlet />
     </>
   );
 }

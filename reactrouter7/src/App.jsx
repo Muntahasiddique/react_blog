@@ -10,12 +10,16 @@ import { Student } from '../Student';
 function App() {
   return (
     <>
-<Navigationbar  />
+
+
       <Routes>
-        <Route path="/" element={<Pageone />} />
-        <Route path="/page" element={<Pagetwo />} />
+       
+      <Route element={<Navigationbar  />} >
+   <Route path="/" element={<Pageone />} />
+     <Route path="/page" element={<Pagetwo />} />
+</Route>
           <Route path="/college" element={<College />} >
-          <Route path='student' element={<Student />} />
+          <Route  index element={<Student />} />
           </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
