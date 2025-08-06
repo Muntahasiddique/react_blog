@@ -1,12 +1,33 @@
-   import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './header.css'; // Regular CSS import (not module)
 
-export function Navbar() {
+export function Navigationbar () {
   return (
     <>
-      <Link to="/page">Go to Page 2</Link>
-      <br />
-       <Link to="/">Go back to Page 1</Link>
-   
+    <header className="header">
+      <div>
+        <Link className="link" to="/">
+          <h2 className="logo">Logo</h2>
+        </Link>
+      </div>
+      <nav>
+        <ul className="navList">
+          <li>
+            <Link className="link" to="/">Home</Link>
+          </li>
+          <li>
+            <Link className="link" to="/login">Login</Link>
+          </li>
+          <li>
+            <Link className="link" to="/about">About</Link>
+          </li>
+            <li>
+            <Link className="link" to="/College">College</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
     </>
   );
-}                            
+}
+
