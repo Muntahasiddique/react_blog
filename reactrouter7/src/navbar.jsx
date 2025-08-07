@@ -13,16 +13,19 @@ export function Navigationbar () {
       <nav>
         <ul className="navList">
           <li>
-            <Link className="link" to="/">Home</Link>
+            <Link className="link" to="/user/">Home</Link>
           </li>
           <li>
-            <Link className="link" to="/page">Login</Link>
+            <Link className="link" to="/user/page">Login</Link>
           </li>
           <li>
             <Link className="link" to="/about">About</Link>
           </li>
             <li>
             <Link className="link" to="/College">College</Link>
+          </li>
+           <li>
+            <Link className="link" to="Users">Users</Link>
           </li>
         </ul>
       </nav>
