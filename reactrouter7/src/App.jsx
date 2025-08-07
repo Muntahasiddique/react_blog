@@ -21,8 +21,8 @@ function App() {
      <Route path="/user/page" element={<Pagetwo />} />
       </Route>
       {/* user dynamic id */}
-       <Route path="/Users" element={<Users />} />
-         <Route path="/Users/:id" element={<UserDetails/>} />
+    <Route path="/Users/list?" element={<Users />} />
+         <Route path="/Users/:id/:name?" element={<UserDetails/>} />
 
 
 

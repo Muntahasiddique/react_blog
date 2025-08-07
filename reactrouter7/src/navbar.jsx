@@ -27,6 +27,9 @@ export function Navigationbar () {
            <li>
             <Link className="link" to="Users">Users</Link>
           </li>
+            <li>
+            <Link className="link" to="Users/list">Userslist</Link>
+          </li>
         </ul>
       </nav>
     </header>

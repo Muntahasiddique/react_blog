@@ -18,6 +18,15 @@ export function Users() {
             </div>
         ))
       }
+     <br />
+     <h1>List of users with name in url</h1>
+      {
+        UserData.map((item )=>(
+            <div>
+                <h4  > <Link to={"/Users/" + item.id +"/"+item.name} >{item.name}</Link> </h4>
+            </div>
+        ))
+      }
      
    
     </>
