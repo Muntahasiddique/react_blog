@@ -34,6 +34,12 @@ function App() {
           </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <br />
+      <br />
+      {/* Tailwind testing */}
+      <h1 class="text-3xl font-bold underline bg-red-700" >
+    tailwind testing 
+  </h1>
   </>
   );
 }

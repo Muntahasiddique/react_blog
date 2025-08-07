@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -29,4 +31,13 @@
 
 .link:hover {
   color: #3498db;
+}
+.active{
+  font-size: 20px;
+  color: rgb(255, 196, 220);
+
+}
+.Customactive{
+  font-size: 50px;
+  color: purple;
 }

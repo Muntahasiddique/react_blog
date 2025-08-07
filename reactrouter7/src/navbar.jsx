@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import './header.css'; // Regular CSS import (not module)
 
 export function Navigationbar () {
@@ -6,29 +6,29 @@ export function Navigationbar () {
     <>
     <header className="header">
       <div>
-        <Link className="link" to="/">
+        <NavLink  className={(isActive)=> isActive?'Customactive link':'link'} to="/">
           <h2 className="logo">Logo</h2>
-        </Link>
+        </NavLink>
       </div>
       <nav>
         <ul className="navList">
           <li>
-            <Link className="link" to="/user/">Home</Link>
+            <NavLink className="link" to="/user/">Home</NavLink>
           </li>
           <li>
-            <Link className="link" to="/user/page">Login</Link>
+            <NavLink className="link" to="/user/page">Login</NavLink>
           </li>
           <li>
-            <Link className="link" to="/about">About</Link>
+            <NavLink className="link" to="/about">About</NavLink>
           </li>
             <li>
-            <Link className="link" to="/College">College</Link>
+            <NavLink className="link" to="/College">College</NavLink>
           </li>
            <li>
-            <Link className="link" to="Users">Users</Link>
+            <NavLink className="link" to="Users">Users</NavLink>
           </li>
             <li>
-            <Link className="link" to="Users/list">Userslist</Link>
+            <NavLink className="link" to="Users/list">Userslist</NavLink>
           </li>
         </ul>
       </nav>
