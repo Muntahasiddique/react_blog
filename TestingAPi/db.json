@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a"
+    },
+    {
+      "id": "2",
+      "title": "an"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a"
+    },
+    {
+      "id": "2",
+      "text": "ano"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": "0966",
+      "name": "amna",
+      "email": "amna@gmail.com",
+      "age": "13"
+    },
+    {
+      "id": "23a7",
+      "name": "muntaha",
+      "email": "Buisness3@gmail.com",
+      "age": "45"
+    }
+  ]
+}
