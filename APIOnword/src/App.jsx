@@ -5,7 +5,9 @@ import './App.css'
 
 function App() {
   const [UserApi, setUserApi] = useState([])
+  const [loader , setloader] =useState(false)
   useEffect(()=>{
+    setloader(true)
 UserApitesting()
   },[])
   async function UserApitesting(){
@@ -13,17 +15,17 @@ UserApitesting()
      let response =  await fetch(URLAPI);
       response = await response.json()
       setUserApi(response.users)
-
+setloader(false)
   }
 
   return (
     <>
     <h1>Fetch api using get method</h1>
-    {
-      UserApi &&  UserApi.map((item)=>(
-        <h3>{item.firstName}</h3>
+    {!loader?
+      UserApi &&  UserApi.map((item,index)=>(
+        <h3 key={index} >{item.firstName}</h3>
       ))
-    }
+    :<h1>Data loading</h1>}
     </>
   )
 }
