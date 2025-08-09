@@ -1,38 +1,69 @@
-import { useState } from 'react'
+import { useActionState, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 
 function App() {
-  const [Name , setName] = useState('')
-    const [NameErr , setNameErr] = useState('')
-  const [pass , setPass] = useState('')
-  const [passErr , setpassErr] = useState('')
-function HandleName(event){
-  if(event.target.value.length>5){
-      setNameErr("enter valid upto 5 chracters")
-  }
+//   const [Name , setName] = useState('')
+//     const [NameErr , setNameErr] = useState('')
+//   const [pass , setPass] = useState('')
+//   const [passErr , setpassErr] = useState('')
+// function HandleName(event){
+//   if(event.target.value.length>5){
+//       setNameErr("enter valid upto 5 chracters")
+//   }
+//   else{
+//     setNameErr('')
+//   }
+
+// }
+
+// function Handlepass(event){
+// let regex = /^[A-Z0-9]+$/i;
+// if(regex.test(event.target.value)){
+//       setpassErr('')
+//   }
+//   else{
+//     setpassErr("please valid alph or num only")
+//   }
+// }
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// Validation with usesactiontate 
+const [data,action,pending]  = useActionState(handleValidation)
+function handleValidation(prevData,FormData){
+ let name = FormData.get('name')
+ let password = FormData.get('password')
+let  regex = /^[A-Z0-9]+$/i;
+ if(!name || name.length > 5){
+  return{
+    error:'name should have 5 characters', name , password
+  }}
+  else if(!regex.test(password)){
+ return{
+    error:'password char or numb', name , password
+  } }
   else{
-    setNameErr('')
+    return{
+      message:'login', name , password
+    }
   }
+  
+
 
 }
-
-function Handlepass(event){
-let regex = /^[A-Z0-9]+$/i;
-if(regex.test(event.target.value)){
-      setpassErr('')
-  }
-  else{
-    setpassErr("please valid alph or num only")
-  }
-}
-
-  return (
+return (
     <>
-    
-      <input onChange={HandleName} type="text" placeholder='Enter your name' />
+    {/* simple validation */}
+      {/* <input onChange={HandleName} type="text" placeholder='Enter your name' />
       <span  >
         {NameErr && NameErr}
       </span>
@@ -44,8 +75,28 @@ if(regex.test(event.target.value)){
       </span>
       <br />
       <br />
-     <button disabled={passErr || NameErr} >Login</button>
-    
+     <button disabled={passErr || NameErr} >Login</button> */}
+{/* .
+.
+.
+.
+.
+.
+.
+.
+. */}
+{/* Validation with usesactiontate */}
+{
+  data?.message && <span>{data?.message}</span>
+}
+{
+  data?.error && <span>{data?.error}</span>
+}
+<form action={action}>
+  <input defaultValue={data?.name} name='name'  type="text" placeholder='Enter name' />
+  <input defaultValue={data?.password} name='password' type="text" placeholder='enter pass' />
+  <button disabled={data?.error} >Login</button>
+</form>
     </>
   )
 }
