@@ -2,7 +2,8 @@ import { lazy, Suspense, useReducer, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-const Lazyloadcomp= lazy(()=>import('./Lazyloadcomp'))
+import { UsersApi } from './UseApi'
+// const Lazyloadcomp= lazy(()=>import('./Lazyloadcomp'))
 //.
 // .
 // .
@@ -38,7 +39,25 @@ function App() {
 // .
 // .
 // LazyLoading
-const [load , setLoad] = useState(false)
+// const [load , setLoad] = useState(false)
+//.
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// .
+// useApi and rest api
+ function fetchdata(){
+  return  fetch('https://dummyjson.com/users').then((response)=>response.json())
+  
+
+ }
+ const UserResoure = fetchdata();
+
   return (
     <>
    {/* <form action="">
@@ -63,11 +82,25 @@ const [load , setLoad] = useState(false)
 . */}
 {/* Lazy loading */}
 
-{
+{/* {
   load? <Suspense fallback={<h3>Loading....</h3>} > <Lazyloadcomp/> </Suspense>:null
 }
-<button onClick={()=>setLoad(true)} >Load cOMP</button>
+<button onClick={()=>setLoad(true)} >Load cOMP</button> */}
+   {/* .
+.
+.
+.
+.
+.
+.
+.
+. */}
+ {/* // useApi and rest api */}
+ <Suspense fallback={<h3>Loading......</h3>} >  <UsersApi UserResoure={UserResoure}  /> </Suspense>
+
     </>
+
+   
   )
 }
 
