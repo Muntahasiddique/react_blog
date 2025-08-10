@@ -6,7 +6,7 @@ import viteLogo from '/vite.svg'
 function App() {
   const Colorstoget = JSON.parse(localStorage.getItem('key'))
  const [r,setr] = useState( Colorstoget  && Colorstoget .r?Colorstoget.r:0);
- const [g,setg] = useState( Colorstoget  && Colorstoget .g?Colorstoget .g:0);
+ const [g,setg] = useState( Colorstoget  && Colorstoget .g?Colorstoget.g:0);
    const [b,setb] = useState( Colorstoget  && Colorstoget.b?Colorstoget .b:0);
 function Savehandle(){
   localStorage.setItem("key" , JSON.stringify({r,g,b}))
